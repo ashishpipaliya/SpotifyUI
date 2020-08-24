@@ -1,15 +1,19 @@
+import 'dart:math';
 import 'package:flutter/material.dart';
 
 const Color kPrimaryColor = Color(0XFF1DB954);
 const Color kSecondaryColor = Color(0XFF191414);
 const Color kNavColor = Color(0XFF282729);
+const Color kSearchBarColor = Color(0XFF4a4a4a);
+Color randomColor =
+    Colors.primaries[Random().nextInt(Colors.primaries.length)][200];
 
-const LinearGradient bgGradient = LinearGradient(
+LinearGradient bgGradient = LinearGradient(
   begin: Alignment.topLeft,
-  end: Alignment.bottomRight,
-  tileMode: TileMode.clamp,
-  stops: [0.01, 0.3],
-  colors: [kPrimaryColor, kSecondaryColor],
+  end: FractionalOffset(0.1, 0.1),
+  // tileMode: TileMode.clamp,
+  // stops: [0.01, 0.1],
+  colors: [randomColor, kSecondaryColor],
 );
 
 const titleFontStyle =
