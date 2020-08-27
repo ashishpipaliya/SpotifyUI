@@ -6,7 +6,7 @@ import 'package:flamera/pages/search_page.dart';
 import 'package:flamera/pages/your_library.dart';
 import 'package:flutter_icons/flutter_icons.dart';
 
-int currentIndex = 0;
+int currentIndex = 1;
 
 List<Widget> tabs = [
   HomePage(),

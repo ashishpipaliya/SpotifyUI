@@ -11,10 +11,10 @@ class SearchPage extends StatelessWidget {
     Size size = MediaQuery.of(context).size;
     return Scaffold(
       body: Container(
-          padding: EdgeInsets.all(15.0),
+          padding: EdgeInsets.symmetric(horizontal: 8.0, vertical: 0.0),
           decoration: BoxDecoration(
               gradient: LinearGradient(
-                  colors: [randomColor, kSecondaryColor],
+                  colors: [kRandomColor, kSecondaryColor],
                   begin: Alignment.topLeft,
                   end: FractionalOffset(0.3, 0.3))),
           width: size.width,
@@ -23,37 +23,45 @@ class SearchPage extends StatelessWidget {
             scrollDirection: Axis.vertical,
             slivers: [
               SliverAppBar(
-                backgroundColor: Colors.transparent,
-                expandedHeight: 150,
-                centerTitle: true,
-                floating: false,
-                title: Text("Search",
-                    style: titleFontStyle.copyWith(fontSize: 50)),
-              ),
-              SliverToBoxAdapter(
-                child: Card(
-                  shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(5.0)),
-                  clipBehavior: Clip.antiAlias,
-                  child: Container(
-                      height: 50,
-                      color: Colors.white,
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          Icon(
-                            AntDesign.search1,
-                            color: kSearchBarColor,
-                          ),
-                          SizedBox(width: 10.0),
-                          Text("Artists, songs, or podcasts",
-                              style: TextStyle(
-                                  fontSize: 16.0,
-                                  fontWeight: FontWeight.bold,
-                                  color: kSearchBarColor)),
-                          SizedBox(height: 30.0)
-                        ],
-                      )),
+                  backgroundColor: Colors.transparent,
+                  expandedHeight: 150,
+                  centerTitle: true,
+                  floating: false,
+                  flexibleSpace: FlexibleSpaceBar(
+                      centerTitle: true,
+                      title: Text("Search",
+                          style: titleFontStyle.copyWith(fontSize: 30)))),
+              SliverAppBar(
+                pinned: true,
+                backgroundColor: kTransparent,
+                elevation: 0.0,
+                toolbarHeight: 55.0,
+                flexibleSpace: Container(
+                  child: Card(
+                    shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(5.0)),
+                    clipBehavior: Clip.antiAlias,
+                    child: Container(
+                        height: 50,
+                        width: size.width * 0.95,
+                        color: Colors.white,
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Icon(
+                              AntDesign.search1,
+                              color: kSearchBarColor,
+                            ),
+                            SizedBox(width: 10.0),
+                            Text("Artists, songs, or podcasts",
+                                style: TextStyle(
+                                    fontSize: 16.0,
+                                    fontWeight: FontWeight.bold,
+                                    color: kSearchBarColor)),
+                            SizedBox(height: 30.0)
+                          ],
+                        )),
+                  ),
                 ),
               ),
               SliverToBoxAdapter(

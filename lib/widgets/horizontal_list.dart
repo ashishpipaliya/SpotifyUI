@@ -1,3 +1,4 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flamera/constants.dart';
 import 'package:flamera/data_provider/artists_provider.dart';
 import 'package:flamera/data_provider/playlist_provider.dart';
@@ -44,7 +45,8 @@ class ArtistBox extends StatelessWidget {
           height: 150,
           padding: EdgeInsets.only(bottom: 10.0),
           child: CircleAvatar(
-            backgroundImage: NetworkImage(artistList[index].profilePic),
+            backgroundImage:
+                CachedNetworkImageProvider(artistList[index].profilePic),
           ),
         ),
         Text(artistList[index].name,
@@ -66,8 +68,7 @@ class PlayListBox extends StatelessWidget {
           height: 150,
           padding: EdgeInsets.only(bottom: 10.0),
           child: Container(
-            child: Image.network(playList[index].coverPic),
-          ),
+              child: CachedNetworkImage(imageUrl: playList[index].coverPic)),
         ),
         Text(playList[index].name,
             style: TextStyle(color: Colors.white, fontWeight: FontWeight.w600))
@@ -88,8 +89,7 @@ class RestOfPlayLists extends StatelessWidget {
           height: 180,
           padding: EdgeInsets.only(bottom: 10.0),
           child: Container(
-            child: Image.network(playList[index].coverPic),
-          ),
+              child: CachedNetworkImage(imageUrl: playList[index].coverPic)),
         ),
         Text(playList[index].name,
             style: TextStyle(color: Colors.white, fontWeight: FontWeight.w600))

@@ -19,7 +19,7 @@ class _HomePageState extends State<HomePage> {
         child: Container(
           decoration: BoxDecoration(gradient: bgGradient),
           width: size.width,
-          padding: EdgeInsets.fromLTRB(15, size.height * 0.035, 0, 0),
+          padding: EdgeInsets.fromLTRB(15, 0, 0, 0),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.start,
             crossAxisAlignment: CrossAxisAlignment.stretch,

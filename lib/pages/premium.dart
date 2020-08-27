@@ -6,7 +6,9 @@ class Premium extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Container(color: kPrimaryColor),
+      body: Container(
+        decoration: BoxDecoration(gradient: bgGradient),
+      ),
     );
   }
 }
