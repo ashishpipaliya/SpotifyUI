@@ -18,6 +18,7 @@
 
 ---
 
+-**Some Images, Icons Used In This Project Are from Spotify and For Demonstration Purpose Only**
 
 This project is a starting point for a Flutter application.
 
